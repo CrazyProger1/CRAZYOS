@@ -2,7 +2,7 @@ ASM=nasm
 CC=gcc
 
 SRC_DIR=src
-TOOLS_DIR=tools
+TOOLS_DIR=src/tools
 BUILD_DIR=build
 
 .PHONY: all floppy kernel bootloader clean always
@@ -37,7 +37,6 @@ kernel: $(BUILD_DIR)/kernel.bin
 
 $(BUILD_DIR)/kernel.bin: always
 	$(MAKE) -C $(SRC_DIR)/kernel BUILD_DIR=$(abspath $(BUILD_DIR))
-
 
 #
 # Always
